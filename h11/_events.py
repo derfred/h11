@@ -141,7 +141,7 @@ class Request(_EventBundle):
         if host_count > 1:
             raise LocalProtocolError("Found multiple Host: headers")
 
-        validate(request_target_re, self.target, "Illegal target characters")
+        validate(request_target_re, self.target, f"Illegal target characters in {self.target}")
 
 
 class _ResponseBase(_EventBundle):
